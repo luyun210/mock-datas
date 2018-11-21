@@ -9,5 +9,23 @@ module.exports = appInfo => {
   // add your config here
   config.middleware = [];
 
+
+  config.security = {
+    // methodnoallow: {
+    //   enable: false
+    // },
+    csrf: {
+      enable: false,
+    },
+    domainWhiteList: [ '*' ],
+    // credentials: false,
+    // origin: '*',
+  };
+  config.cors = {
+    // origin: '*',
+    // credentials: true,
+    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
+  };
+
   return config;
 };
