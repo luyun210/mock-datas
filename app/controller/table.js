@@ -15,6 +15,27 @@ class TableController extends BaseController {
     } = this.ctx.query;
     const datas = {
       data: [],
+      columns: [
+        {
+          title: 'id',
+          dataIndex: 'id',
+          key: 'id',
+        },
+        {
+          title: '业务来源',
+          dataIndex: 'column1',
+          key: 'column1',
+        },
+        { title: '运输方式', dataIndex: 'column2', key: 'column2' },
+        { title: 'column 3', dataIndex: 'column3', key: 'column3' },
+        { title: 'column 4', dataIndex: 'column4', key: 'column4' },
+        { title: 'column 5', dataIndex: 'column5', key: 'column5' },
+        {
+          title: '操作',
+          width: 100,
+          key: 'action',
+        },
+      ],
       pageInfo: {
         page,
         total: 100,
