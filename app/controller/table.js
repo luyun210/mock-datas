@@ -20,14 +20,24 @@ class TableController extends BaseController {
           title: 'id',
           dataIndex: 'id',
           key: 'id',
+          type: 'number',
+          display: true,
         },
+        { title: 'column 1', dataIndex: 'column1', key: 'column1', display: true },
         {
           title: '业务来源',
-          dataIndex: 'column1',
-          key: 'column1',
+          dataIndex: 'column2',
+          key: 'column2',
+          type: 'string',
+          display: true,
         },
-        { title: '运输方式', dataIndex: 'column2', key: 'column2' },
-        { title: 'column 3', dataIndex: 'column3', key: 'column3' },
+        {
+          title: '运输方式',
+          dataIndex: 'column3',
+          key: 'column3',
+          type: 'enum',
+          display: true,
+        },
         { title: 'column 4', dataIndex: 'column4', key: 'column4' },
         { title: 'column 5', dataIndex: 'column5', key: 'column5' },
         {
@@ -63,7 +73,7 @@ class TableController extends BaseController {
 
   renderColumnData(column, index, data) {
     if (!data) {
-      return `column1-${index}`;
+      return `${column}-${index}`;
     }
     return `${data}-${index}`;
 
