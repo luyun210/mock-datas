@@ -12,17 +12,18 @@ class TableController extends BaseController {
       column5 = '',
       page = 1,
       pageSize = 10,
+      s = '',
     } = this.ctx.query;
     const datas = {
       data: [],
       columns: [
         {
-          title: 'id',
+          title: 'ID',
           dataIndex: 'id',
           key: 'id',
           type: 'number',
         },
-        { title: 'column 1', dataIndex: 'column1', key: 'column1' },
+        { title: '订单号', dataIndex: 'column1', key: 'column1' },
         {
           title: '业务来源',
           dataIndex: 'column2',
@@ -33,7 +34,7 @@ class TableController extends BaseController {
           title: '运输方式',
           dataIndex: 'column3',
           key: 'column3',
-          type: 'enum',
+          // type: 'enum',
         },
         { title: 'column 4', dataIndex: 'column4', key: 'column4', hide: true },
         { title: 'column 5', dataIndex: 'column5', key: 'column5', hide: true },
@@ -55,11 +56,11 @@ class TableController extends BaseController {
     for (let index = begin; index < end; index++) {
       const data = {
         id: index,
-        column1: this.renderColumnData('column1', index, column1),
-        column2: this.renderColumnData('column2', index, column2),
-        column3: this.renderColumnData('column3', index, column3),
-        column4: this.renderColumnData('column4', index, column4),
-        column5: this.renderColumnData('column5', index, column5),
+        column1: s || this.renderColumnData('column1', index, column1),
+        column2: s || this.renderColumnData('column2', index, column2),
+        column3: s || this.renderColumnData('column3', index, column3),
+        column4: s || this.renderColumnData('column4', index, column4),
+        column5: s || this.renderColumnData('column5', index, column5),
       };
 
       datas.data.push(data);
