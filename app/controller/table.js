@@ -21,7 +21,6 @@ class TableController extends BaseController {
           title: 'ID',
           dataIndex: 'id',
           key: 'id',
-          type: 'number',
         },
         { title: '订单号', dataIndex: 'column1', key: 'column1' },
         {
@@ -36,6 +35,7 @@ class TableController extends BaseController {
           key: 'column3',
           // type: 'enum',
         },
+        { title: '库存', dataIndex: 'stock', key: 'stock', type: 'number' },
         { title: 'column 4', dataIndex: 'column4', key: 'column4', hide: true },
         { title: 'column 5', dataIndex: 'column5', key: 'column5', hide: true },
         {
@@ -61,6 +61,7 @@ class TableController extends BaseController {
         column3: s || this.renderColumnData('column3', index, column3),
         column4: s || this.renderColumnData('column4', index, column4),
         column5: s || this.renderColumnData('column5', index, column5),
+        stock: index,
       };
 
       datas.data.push(data);
